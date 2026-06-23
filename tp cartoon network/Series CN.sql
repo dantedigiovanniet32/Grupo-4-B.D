@@ -24,7 +24,7 @@ tituloepisodio varchar(50),
 idserie int,
 foreign key (idserie) references series(idserie), 
 duracionminutos int(2),
-rating decimal(3,1) -- cambiado a decimal para aceptar valores como 6.5
+rating decimal(3,1) 
 );
 
 create table habilidadesespeciales(
