@@ -1,0 +1,34 @@
+jira
+
+vs code (azul)
+nuevoarchivo
+index.html
+
+html:5
+ |
+ \/
+<read/>
+<body/>
+<footer/>
+
+federico.bouzon@bue.edu.ar
+
+crear carpeta
+arrastrar carpeta a vs code
+nombre = index.html
+
+
+</head>
+<body>
+    <h1> Hello World! </h1>
+
+
+</body>
+</html>
+
+
+boostrap   es un framework
+
+div es un contenedor adentro de la pagina html
+
+css -> lenguaje de etiquetas
