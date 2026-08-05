@@ -1,9 +1,11 @@
-# Grupo-4-B.D
+Asteroid Dodge
 
 El proyecto se hace en  SQL y C#
 
 4 partes:
 - GIT
-- Gira
+- Jira
 - Carpeta campo
-- BD
+- Base de datos
+  
+https://interdisciplinario4to.gt.tc/?i=2
