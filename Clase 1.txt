@@ -1,5 +1,8 @@
 jira
 
+federico.bouzon@bue.edu.ar
+
+
 vs code (azul)
 nuevoarchivo
 index.html
@@ -11,7 +14,6 @@ html:5
 <body/>
 <footer/>
 
-federico.bouzon@bue.edu.ar
 
 crear carpeta
 arrastrar carpeta a vs code
@@ -21,6 +23,7 @@ nombre = index.html
 </head>
 <body>
     <h1> Hello World! </h1>
+    <h2> Hello World! </h2>
 
 
 </body>
@@ -29,6 +32,30 @@ nombre = index.html
 
 boostrap   es un framework
 
+
+
 div es un contenedor adentro de la pagina html
 
+p
+.class //le asigno un nombre al div para poder usarlo despues
+
+background-color
+
+weigh //para modificar el ancho de un div, se pueden poner valores en pixeles (px) o porcentaje (%)
+
+text-align: center  //centra el div
+
+id= "Titulo"   // es como un clase pero que solo se usa una ves
+
+img //hay que poner el directorio con la extension, muestra la imagen en el div
+
+
 css -> lenguaje de etiquetas
+
+si cambias el css de carpeta tenes que cambiar el directorio desde el codigo del vs
+en href lo cambio
+
+en cmd:
+cd "nombre directorio"      //para seleccionar ese lugar
+cd ..   //volver para atras
+dir  //muestra todos los archivos en el directorio
