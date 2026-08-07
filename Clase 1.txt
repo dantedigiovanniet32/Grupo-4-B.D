@@ -41,7 +41,9 @@ p
 
 background-color
 
-weigh //para modificar el ancho de un div, se pueden poner valores en pixeles (px) o porcentaje (%)
+width //para modificar el ancho de un div, se pueden poner valores en pixeles (px) o porcentaje (%)
+
+height  //es la altura, "auto" para respetar la proporcion si modificamos el ancho
 
 text-align: center  //centra el div
 
