@@ -55,6 +55,10 @@ css -> lenguaje de etiquetas
 si cambias el css de carpeta tenes que cambiar el directorio desde el codigo del vs
 en href lo cambio
 
+el el index.html van los elementos que van en la pantalla, los archivos, mientras que el css define como se ven, color, tamaño etc.
+
+lo mas basico: https://developer.mozilla.org/es/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content
+
 en cmd:
 cd "nombre directorio"      //para seleccionar ese lugar
 cd ..   //volver para atras
