@@ -1,0 +1,37 @@
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    color: #333333;
+}
+
+/* Estilo para el titulo principal */
+.Titulo {
+    text-align: center;
+    background-color: #0d6efd;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+/* Estilo para las secciones de presentacion y pasatiempos */
+.Presentacion, .Pasatiempos {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Presentacion h2, .Pasatiempos h2 {
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+/* Centrado y sombra para las tarjetas de Bootstrap */
+.card {
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
