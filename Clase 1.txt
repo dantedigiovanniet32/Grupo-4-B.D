@@ -65,3 +65,18 @@ en cmd:
 cd "nombre directorio"      //para seleccionar ese lugar
 cd ..   //volver para atras
 dir  //muestra todos los archivos en el directorio
+
+
+Extensiones visual studio code
+indest-color
+outrun
+
+conectar apache y mysqll en el xamp
+
+disco c: -> xampp2 -> hotdocs-> tirar todos los archivos de la carptera de vs code
+
+localhost en el navegador para entrar al index
+
+conexion.php
+
+
