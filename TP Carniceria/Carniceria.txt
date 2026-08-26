@@ -1,0 +1,10 @@
+1.
+a. V
+b. F, Si se puede pero la consecuencia seria no tener un identificador único sobre cada tabla.
+c. F, También se pueden usar con otras comandos como From o Select
+d. V
+2.
+a. La diferencia va en que Where analiza los datos uno por uno y Having los analiza ya agrupados, y la mas importante es que Having puede usar funciones mientras que Where no.
+3.
+
+
