@@ -1,3 +1,9 @@
+create database asteroid_dodge;
+
+use asteroid_dodge;
+
+
+
 create table players (
 id_player int primary key,
 nombre varchar(100)
