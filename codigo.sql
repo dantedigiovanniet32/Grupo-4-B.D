@@ -76,3 +76,40 @@ timestamp_fin datetime,
 foreign key (id_session) references sessions(id_session),
 foreign key (id_powerup) references powerups(id_powerup)
 );
+
+
+
+
+
+
+
+
+
+#Consultas
+
+
+  
+#Todos los jugadores
+  
+select * from players;
+
+
+#Para ver que jugador jugo en cada sessionn
+
+select players.nombre, sessions.id_session, sessions.inicio, sessions.tiempo_supervivencia from sessions
+inner join players on sessions.id_player = players.id_player;
+
+
+
+
+
+
+
+# COntar las colisiones de cada sesion
+
+select id_session, count(*) as total_colisiones from collisionlogs
+  
+group by id_session;
+
+
+
