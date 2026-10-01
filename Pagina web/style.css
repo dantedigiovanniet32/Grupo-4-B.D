@@ -1,4 +1,4 @@
-/* FORZAR COLOR CLARO EN TODO EL CONTENIDO DE LAS TARJETAS */
+
 .card-custom,
 .card-custom *,
 .accordion-body,
@@ -8,14 +8,14 @@
   color: #f8fafc !important;
 }
 
-/* Color para textos secundarios o explicaciones en gris claro legible */
+
 .hero .lead,
 .text-muted,
 .accordion-body code {
   color: #cbd5e1 !important;
 }
 
-/* Asegurar que las tarjetas tengan un fondo oscuro contrastante */
+
 .card-custom {
   background-color: #1e293b !important;
 }
