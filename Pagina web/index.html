@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina SQL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #0f172a !important;
+      color: #ffffff !important;
+      font-family: 'Segoe UI', system-ui, sans-serif !important;
+      padding-top: 110px !important;
+    }
+
+    /* Navbar Flotante */
+    .navbar-floating {
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      max-width: 1200px;
+      z-index: 1030;
+      background: rgba(15, 23, 42, 0.9) !important;
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.35) !important;
+      border-radius: 50px !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      padding: 0.5rem 1.5rem !important;
+    }
+
+    .navbar-brand {
+      font-weight: 800 !important;
+      background: linear-gradient(135deg, #38bdf8, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.5rem !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      padding: 0.4rem 1rem !important;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+    }
+
+    /* Tarjetas oscuras con texto claro */
+    .card-custom {
+      background-color: #1e293b !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 16px !important;
+      color: #ffffff !important;
+    }
+
+    .card-custom p, .card-custom span, .card-custom div, .card-custom li {
+      color: #ffffff !important;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      color: #38bdf8 !important;
+      font-weight: 700;
+      font-size: 1.75rem;
+    }
+
+    .badge-num {
+      background: linear-gradient(135deg, #fb923c, #f43f5e) !important;
+      color: #ffffff !important;
+      border-radius: 10px;
+      padding: 6px 12px;
+      margin-right: 8px;
+    }
+
+    /* Acordeones */
+    .accordion-item {
+      background-color: #0f172a !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #ffffff !important;
+      margin-bottom: 0.5rem;
+      border-radius: 8px !important;
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      background-color: #1e293b !important;
+      color: #ffffff !important;
+      font-weight: 600;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: rgba(56, 189, 248, 0.15) !important;
+      color: #38bdf8 !important;
+    }
+
+    .accordion-button::after {
+      filter: invert(1);
+    }
+
+    .accordion-body, .accordion-body * {
+      color: #f1f5f9 !important;
+    }
+
+    /* Bloques de Código */
+    pre {
+      background-color: #020617 !important;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    pre code {
+      color: #38bdf8 !important;
+    }
+
+    /* Tablas */
+    .table {
+      color: #ffffff !important;
+    }
+
+    .table-dark {
+      --bs-table-bg: #020617;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .table td, .table th {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR FLOTANTE -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-floating">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#inicio">MySQL</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#que-es-mysql">¿Qué es MySQL?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#store-procedure">Store Procedure</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sql">SQL</a></li>
+        <li class="nav-item"><a class="nav-link" href="#diccionario">Diccionario de datos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#variables">Variables</a></li>
+        <li class="nav-item"><a class="nav-link" href="#normalizacion">Normalización</a></li>
+        <li class="nav-item"><a class="nav-link" href="#der">DER</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="inicio" class="text-center container my-4 pt-3">
+  <h1 class="display-4 fw-bold" style="color: #38bdf8;">MySQL</h1>
+  <p class="lead" style="color: #cbd5e1 !important;">Conceptos Generales sobre: SQL, tipos de datos, normalización y modelado DER.</p>
+</div>
+
+<div class="container my-5">
+
+ 
+  <section id="que-es-mysql" class="py-4">
+    <h2 class="section-title"></span> 1: ¿Que es MySQL?</h2>
+    <div class="card card-custom p-4 mt-3">
+      <p style="margin-bottom: 0;">
+        MySQL es un Sistema Gestor de Bases de Datos Relacionales (SGBD) de código abierto que utiliza el lenguaje SQL (Structured Query Language) para consultar, almacenar, organizar y administrar grandes volúmenes de información en tablas interrelacionadas. Su función principal es servir como motor central de datos para permitir que aplicaciones y sitios web puedan guardar, actualizar y recuperar información de manera estructurada, segura y eficiente.
+      </p>
+    </div>
+  </section>
+
+
+  <section id="store-procedure" class="py-4">
+    <h2 class="section-title"></span> 2: Store Procedure</h2>
+    <div class="card card-custom p-4 mt-3">
+      <p>Un <b>Stored Procedure</b> (procedimiento almacenado) es un bloque de código SQL con nombre propio que se guarda en la base de datos y se puede ejecutar (invocar) las veces que haga falta, en vez de reescribir la misma consulta una y otra vez. Sirve para encapsular lógica repetitiva, mejorar el rendimiento y centralizar reglas de negocio en el servidor.</p>
+<pre><code>DELIMITER //
+CREATE PROCEDURE obtenerUsuariosPorNombre(IN nombreBuscado VARCHAR(100))
+BEGIN
+    SELECT * FROM usuarios WHERE nombre LIKE CONCAT('%', nombreBuscado, '%');
+END //
+DELIMITER ;
+
+-- Para ejecutarlo:
+CALL obtenerUsuariosPorNombre('Fede');</code></pre>
+    </div>
+  </section>
+
+  
+  <section id="sql" class="py-4">
+    <h2 class="section-title"></span> 3: SQL</h2>
+    <div class="card card-custom p-4 mt-3">
+      <div class="accordion" id="accordionSQL">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sub">Subconsultas</button>
+          </h2>
+          <div id="sub" class="accordion-collapse collapse show" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              Una subconsulta es un <code>SELECT</code> dentro de otra consulta. Se usa cuando el resultado de una consulta depende del resultado de otra.
+<pre><code>SELECT nombre, email
+FROM usuarios
+WHERE id IN (SELECT id_usuario FROM pedidos WHERE total > 1000);</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#joins">Joins</button>
+          </h2>
+          <div id="joins" class="accordion-collapse collapse" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              <span>Los <b>JOIN</b> combinan filas de dos o más tablas relacionadas por una clave en común.</span>
+
+              <h5 class="mt-3" style="color: #38bdf8;">INNER JOIN</h5>
+              Devuelve solo las filas que tienen coincidencia en ambas tablas.
+<pre><code>SELECT u.nombre, p.total
+FROM usuarios u
+INNER JOIN pedidos p ON u.id = p.id_usuario;</code></pre>
+
+              <h5 class="mt-3" style="color: #38bdf8;">JOIN</h5>
+              Es sinónimo de INNER JOIN: si escribís <code>JOIN</code> sin aclarar el tipo, MySQL asume INNER JOIN.
+<pre><code>SELECT u.nombre, p.total
+FROM usuarios u
+JOIN pedidos p ON u.id = p.id_usuario;</code></pre>
+
+              <h5 class="mt-3" style="color: #38bdf8;">LEFT JOIN</h5>
+              Trae todas las filas de la tabla izquierda, tengan o no coincidencia en la derecha (con NULL si no hay match).
+<pre><code>SELECT u.nombre, p.total
+FROM usuarios u
+LEFT JOIN pedidos p ON u.id = p.id_usuario;</code></pre>
+
+              <h5 class="mt-3" style="color: #38bdf8;">RIGHT JOIN</h5>
+              Es el espejo del LEFT JOIN: trae todas las filas de la tabla derecha, tengan o no coincidencia en la izquierda.
+<pre><code>SELECT u.nombre, p.total
+FROM usuarios u
+RIGHT JOIN pedidos p ON u.id = p.id_usuario;</code></pre>
+
+              <h5 class="mt-3" style="color: #38bdf8;">OUTER JOIN</h5>
+              Término general para los joins que incluyen filas sin coincidencia (LEFT, RIGHT o FULL). MySQL no tiene la palabra <code>OUTER JOIN</code> sola: se usa combinada con LEFT/RIGHT/FULL.
+
+              <h5 class="mt-3" style="color: #38bdf8;">FULL JOIN</h5>
+              Combina LEFT y RIGHT JOIN: trae todas las filas de ambas tablas, tengan o no coincidencia. MySQL no lo soporta de forma nativa, se simula con <code>UNION</code>.
+<pre><code>SELECT u.nombre, p.total FROM usuarios u LEFT JOIN pedidos p ON u.id = p.id_usuario
+UNION
+SELECT u.nombre, p.total FROM usuarios u RIGHT JOIN pedidos p ON u.id = p.id_usuario;</code></pre>
+
+              <h5 class="mt-3" style="color: #38bdf8;">CROSS JOIN</h5>
+              Devuelve el producto cartesiano: cada fila de una tabla combinada con cada fila de la otra (sin condición ON).
+<pre><code>SELECT u.nombre, c.nombre
+FROM usuarios u
+CROSS JOIN categorias c;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#like">Like</button>
+          </h2>
+          <div id="like" class="accordion-collapse collapse" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              Filtra texto por patrones, usando <code>%</code> (cualquier cantidad de caracteres) y <code>_</code> (un solo carácter).
+<pre><code>SELECT * FROM usuarios WHERE email LIKE '%@gmail.com';</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alter">Alter Table</button>
+          </h2>
+          <div id="alter" class="accordion-collapse collapse" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              Modifica la estructura de una tabla ya creada: agregar, modificar o eliminar columnas.
+<pre><code>ALTER TABLE usuarios ADD COLUMN telefono VARCHAR(20);</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#having">Having</button>
+          </h2>
+          <div id="having" class="accordion-collapse collapse" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              Filtra resultados <i>después</i> de agrupar con <code>GROUP BY</code> (a diferencia de <code>WHERE</code>, que filtra antes de agrupar).
+<pre><code>SELECT id_usuario, COUNT(*) AS cantidad
+FROM pedidos
+GROUP BY id_usuario
+HAVING COUNT(*) > 5;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#orderby">Order By</button>
+          </h2>
+          <div id="orderby" class="accordion-collapse collapse" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              Ordena el resultado por una o más columnas, ascendente (<code>ASC</code>, por defecto) o descendente (<code>DESC</code>).
+<pre><code>SELECT * FROM usuarios ORDER BY nombre ASC;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#groupby">Group By</button>
+          </h2>
+          <div id="groupby" class="accordion-collapse collapse" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              Agrupa filas que comparten un valor en común, para poder aplicarles funciones de agregación (COUNT, SUM, AVG, etc.) por grupo.
+<pre><code>SELECT id_usuario, SUM(total) AS gastado
+FROM pedidos
+GROUP BY id_usuario;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pkfk">PK y FK</button>
+          </h2>
+          <div id="pkfk" class="accordion-collapse collapse" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              <b>PK (Primary Key / clave primaria)</b>: identifica de forma única cada fila de una tabla, no se repite ni puede ser NULL.<br>
+              <b>FK (Foreign Key / clave foránea)</b>: columna que referencia a la PK de otra tabla, para relacionar ambas.
+<pre><code>CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    total DECIMAL(10,2),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#drop">Drop / Truncate / Delete</button>
+          </h2>
+          <div id="drop" class="accordion-collapse collapse" data-bs-parent="#accordionSQL">
+            <div class="accordion-body">
+              <b>DROP:</b> Elimina por completo un objeto de la base de datos (tabla, base, etc.), estructura y datos incluidos.<br>
+              <b>TRUNCATE:</b> Vacía todos los datos de una tabla, pero mantiene su estructura.<br>
+              <b>DELETE:</b> Borra filas específicas según una condición en <code>WHERE</code>.
+<pre><code>DROP TABLE usuarios;
+TRUNCATE TABLE pedidos;
+DELETE FROM usuarios WHERE id = 5;</code></pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="diccionario" class="py-4">
+    <h2 class="section-title"></span> 4: Diccionario de datos</h2>
+    <div class="card card-custom p-4 mt-3">
+      <p class="mb-3">El diccionario de datos es la documentación que describe cada tabla y cada columna de la base de datos: nombre, tipo de dato, si acepta NULL, restricciones (PK, FK, UNIQUE), y una breve descripción de qué representa. Sirve como referencia para cualquiera que trabaje con la base sin tener que leer el código SQL.</p>
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>Tabla</th>
+              <th>Columna</th>
+              <th>Tipo</th>
+              <th>Restricción</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="3" class="fw-bold align-middle">usuarios</td><td>id</td><td><code>INT</code></td><td>PK, AUTO_INCREMENT</td><td>Identificador único del usuario</td></tr>
+            <tr><td>nombre</td><td><code>VARCHAR(100)</code></td><td>NOT NULL</td><td>Nombre completo</td></tr>
+            <tr><td>email</td><td><code>VARCHAR(100)</code></td><td>NOT NULL, UNIQUE</td><td>Correo del usuario</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="variables" class="py-4">
+    <h2 class="section-title"></span> 5: Variables (Tipos de datos)</h2>
+    <div class="card card-custom p-4 mt-3">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>Tipo</th>
+              <th>Descripción</th>
+              <th>Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>DATE</code></td><td>Guarda solo una fecha (año-mes-día).</td><td><code>2026-09-21</code></td></tr>
+            <tr><td><code>INT</code></td><td>Números enteros.</td><td><code>42</code></td></tr>
+            <tr><td><code>VARCHAR</code></td><td>Texto de longitud variable, con un máximo definido.</td><td><code>VARCHAR(100)</code></td></tr>
+            <tr><td><code>ENUM</code></td><td>Lista fija de valores permitidos.</td><td><code>ENUM('activo','inactivo')</code></td></tr>
+            <tr><td><code>DATETIME</code></td><td>Guarda fecha y hora combinadas.</td><td><code>2026-09-21 14:30:00</code></td></tr>
+            <tr><td><code>DECIMAL</code></td><td>Números decimales exactos, ideal para dinero.</td><td><code>DECIMAL(10,2)</code></td></tr>
+            <tr><td><code>FLOAT</code></td><td>Números decimales de precisión aproximada.</td><td><code>3.14</code></td></tr>
+            <tr><td><code>CHAR</code></td><td>Texto de longitud fija.</td><td><code>CHAR(2)</code> → <code>'AR'</code></td></tr>
+            <tr><td><code>TIMESTAMP</code></td><td>Fecha y hora, autogenerable.</td><td><code>DEFAULT CURRENT_TIMESTAMP</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="normalizacion" class="py-4">
+    <h2 class="section-title"></span> 6: Normalización</h2>
+    <div class="card card-custom p-4 mt-3">
+      <p class="mb-3">La normalización es el proceso de organizar las tablas de una base de datos para reducir la redundancia y evitar inconsistencias, dividiendo la información en tablas relacionadas.</p>
+      <div class="accordion" id="accordionNorm">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#norma1">1FN (Primera Forma Normal)</button>
+          </h2>
+          <div id="norma1" class="accordion-collapse collapse show" data-bs-parent="#accordionNorm">
+            <div class="accordion-body">
+              Cada columna debe tener valores atómicos (no listas ni datos repetidos dentro de una misma celda), y cada fila debe ser única.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#norma2">2FN (Segunda Forma Normal)</button>
+          </h2>
+          <div id="norma2" class="accordion-collapse collapse" data-bs-parent="#accordionNorm">
+            <div class="accordion-body">
+              Cumple la 1FN, y además todos los atributos que no son clave dependen de la clave primaria completa (aplica sobre todo cuando la PK es compuesta).
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#norma3">3FN (Tercera Forma Normal)</button>
+          </h2>
+          <div id="norma3" class="accordion-collapse collapse" data-bs-parent="#accordionNorm">
+            <div class="accordion-body">
+              Cumple la 2FN, y además ningún atributo no clave depende de otro atributo no clave (elimina dependencias transitivas).
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="der" class="py-4">
+    <h2 class="section-title"></span> 7: DER (Diagrama Entidad-Relación)</h2>
+    <div class="card card-custom p-4 mt-3">
+      <div class="accordion" id="accordionDER">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#der1">Buenas prácticas</button>
+          </h2>
+          <div id="der1" class="accordion-collapse collapse show" data-bs-parent="#accordionDER">
+            <div class="accordion-body">
+              <ul class="mb-0">
+                <li>Usar nombres claros y consistentes para tablas y columnas.</li>
+                <li>Definir siempre una PK por tabla.</li>
+                <li>Marcar bien las relaciones (1 a 1, 1 a muchos, muchos a muchos) y su cardinalidad.</li>
+                <li>Normalizar antes de diagramar, para evitar redundancias en el modelo.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#der2">Diagrama de bloques</button>
+          </h2>
+          <div id="der2" class="accordion-collapse collapse" data-bs-parent="#accordionDER">
+            <div class="accordion-body">
+              Además del clásico diagrama entidad-relación, el modelo se puede representar como un <b>diagrama de bloques</b>: cada tabla es un rectángulo con la lista de sus columnas adentro, y líneas que conectan las FK con las PK de otras tablas. Es la forma que usan herramientas como MySQL Workbench o dbdiagram.io.
+            </div>
+          </div>
+        </div>
+
+        <!-- Nuevo ítem con la imagen de ejemplo -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#der3">Ejemplo Práctico (Congresos, Expositores y Charlas)</button>
+          </h2>
+          <div id="der3" class="accordion-collapse collapse" data-bs-parent="#accordionDER">
+            <div class="accordion-body text-center">
+              <p class="text-start mb-3">
+                Ejemplo de un Diagrama Entidad-Relación en formato de bloques mostrando las tablas <code>Expositores</code>, <code>Congresos</code> y la tabla intermedia <code>Charlas</code>:
+              </p>
+              <img src="Congresos.png" alt="Ejemplo DER Congresos" class="img-fluid rounded border border-secondary shadow-lg my-2" style="max-width: 100%; height: auto; background-color: #ffffff; padding: 10px;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="text-center py-4" style="background-color: #020617 !important; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 50px;">
+  <div class="container">
+    <span style="color: #ffffff !important; font-weight: bold; font-size: 1.1rem;">Creado por Leonel Alvarez</span>
+    <div class="mt-2">
+      <a href="#inicio" style="color: #fb923c; text-decoration: none;">Volver arriba ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

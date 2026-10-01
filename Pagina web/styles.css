@@ -1,0 +1,150 @@
+
+body {
+  --azul-mysql: #00618a;
+  --naranja-mysql: #f29111;
+  --fondo: #f5f7fa;
+  azul-claro: #e6f2f7;
+  texto-gris: #1f2937;
+}
+
+body {
+  background-color: var(--fondo) !important;
+  background-color: #f5f7fa !important;
+  color: #1f2937 !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  margin: 0px;
+  padding-top: 56px;
+  font-size: 16px;
+}
+
+.navbar {
+  background-color: var(--azulMysql);
+  background-color: #00618a !important;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+  float: left;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.15s ease-in-out;
+}
+
+#navMenu .navbar-nav .nav-link:hover {
+  color: #f29111 !important;
+  color: #F29111 !important;
+}
+
+.hero {
+  min-height: 40vh;
+  background: linear-gradient(135deg, #00618a, #003a52);
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.hero .lead {
+  color: rgb(255, 255, 255);
+  font-size: 18pt;
+}
+
+.hero h1 {
+  color: white;
+}
+
+#titulo {
+  font-weight: bold;
+}
+
+.section-anchor {
+  scroll-margin-top: 70px;
+}
+
+body .container section h2 {
+  color: #00618a;
+  border-bottom: 3px solid #f29111;
+  padding-bottom: 0.4rem;
+  display: inline-block;
+  clear: both;
+}
+
+section h2 .badge {
+  background-color: #f29111 !important;
+  margin-right: 8px;
+  color: #fff !important
+}
+
+.titulo {
+  color: #00618a;
+}
+
+.texto {
+  line-height: 1.5;
+}
+
+h5 {
+  margin-top: 15px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e6f2f7 !important;
+  color: #00618a !important;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 97, 138, 0.25) !important;
+  outline: none;
+}
+
+.accordion-item { margin-bottom: 0px; }
+
+.accordion-body {
+}
+
+pre {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.9rem !important;
+  margin-top: 0.5rem;
+  margin-bottom: 15px;
+}
+
+pre code {
+  color: inherit !important;
+  background: none !important;
+  font-size: 100%;
+}
+
+.table thead {
+  color: #00618a;
+}
+
+.table td {
+  font-size: 15px;
+}
+
+table {
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #00618a !important;
+  color: #ffffff !important;
+  margin-top: -1px;
+}
+
+.footer a {
+  color: #f29111;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #00618a;
+  color: #fff;
+}
