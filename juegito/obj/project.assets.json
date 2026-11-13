@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net8.0": {
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
@@ -405,29 +405,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tomas\\.nuget\\packages\\": {}
+    "C:\\Users\\Redes-20\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\otrocoso\\Asteroides.csproj",
+      "projectUniqueName": "C:\\Users\\Redes-20\\Documents\\GitHub\\Grupo-4-B.D\\juegito\\Asteroides.csproj",
       "projectName": "Asteroides",
-      "projectPath": "D:\\otrocoso\\Asteroides.csproj",
-      "packagesPath": "C:\\Users\\Tomas\\.nuget\\packages\\",
-      "outputPath": "D:\\otrocoso\\obj\\",
+      "projectPath": "C:\\Users\\Redes-20\\Documents\\GitHub\\Grupo-4-B.D\\juegito\\Asteroides.csproj",
+      "packagesPath": "C:\\Users\\Redes-20\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Redes-20\\Documents\\GitHub\\Grupo-4-B.D\\juegito\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Tomas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Redes-20\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -442,11 +443,10 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.400"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
-        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "MonoGame.Framework.DesktopGL": {
@@ -474,7 +474,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.320/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
