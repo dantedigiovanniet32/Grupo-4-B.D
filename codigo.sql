@@ -113,3 +113,32 @@ group by id_session;
 
 
 
+# los 5 mejores seciones de juego
+#llamo tambien a inicio y dificulta para usarlo en el juego c# y tener mas contexto
+
+  
+SELECT players.nombre,     sessions.tiempo_supervivencia,      sessions.dificultad_inicial,      sessions.inicio
+FROM sessions
+  
+INNER JOIN players ON sessions.id_player = players.id_player
+ORDER BY sessions.tiempo_supervivencia DESC
+LIMIT 5;
+
+
+# store procidure, inserta jugador
+
+DELIMITER //
+
+CREATE PROCEDURE crear_jugador(
+    IN nuevo_id INT,
+    IN nuevo_nombre VARCHAR(100)
+)
+BEGIN
+    INSERT INTO players (id_player, nombre)
+    VALUES (nuevo_id, nuevo_nombre);
+END //
+
+DELIMITER ;
+
+# CALL crear_jugador(1, 'Belisario');
+
