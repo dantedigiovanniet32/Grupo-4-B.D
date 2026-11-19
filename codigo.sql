@@ -6,7 +6,9 @@ use asteroid_dodge;
 
 create table players (
 id_player int primary key,
-nombre varchar(100)
+nombre varchar(100),
+vidas int,
+puntos_totales int
 );
 
 create table sessions (
