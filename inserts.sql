@@ -15,7 +15,8 @@ drop table if exists players;
 create table players (
 id_player int primary key AUTO_INCREMENT,
 nombre varchar(100),
-puntos int
+vidas int,
+puntos_totales int
 );
 
 create table sessions (
@@ -88,15 +89,15 @@ foreign key (id_powerup) references powerups(id_powerup)
 
 # Inserts
 
-insert into players(nombre, puntos) values
-("Vg7", 99999999),
-("Wly", 23423467),
-("Frg", 94981),
-("Mke", 456476),
-("Trl", 789997),
-("Tim", 4567891),
-("Lzu", 123456),
-("Stx", 876543);
+insert into players(nombre, puntos_totales, vidas) values
+("Vg7", 99999999, 1457),
+("Wly", 23423467, 1000),
+("Frg", 94981, 457),
+("Mke", 456476 790),
+("Trl", 789997, 600),
+("Tim", 4567891, 768),
+("Lzu", 123456, 956),
+("Stx", 876543, 700);
 
 insert into sessions(id_player, inicio, fin, tiempo_supervivencia, dificultad_inicial) values
 (1, '2026-06-01 10:00:00', '2026-06-01 10:01:10', 70, "Dificil"),
