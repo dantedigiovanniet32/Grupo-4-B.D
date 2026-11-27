@@ -1,5 +1,5 @@
-﻿// cola  circular  hecha  a  mano  con  un  array  nomas
-// no  uso  la  cola  de  .net  porque  la  quiero  simple
+﻿// cola  circular con  un  array  nomas
+// no  uso  la  cola  de  .net  porque la  quiero  simple
 namespace AsteroidDodge;
 
 public class Cola
